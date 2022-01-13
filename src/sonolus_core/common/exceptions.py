@@ -1,0 +1,2 @@
+class ParseVersionException(Exception):
+    pass
