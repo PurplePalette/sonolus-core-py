@@ -1,7 +1,9 @@
-import requests
 import re
-from .exceptions import ParseVersionException
 from dataclasses import dataclass
+
+import requests
+
+from .exceptions import ParseVersionException
 
 
 @dataclass
