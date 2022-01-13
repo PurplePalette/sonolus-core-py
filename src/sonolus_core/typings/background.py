@@ -1,30 +1,9 @@
 from dataclasses import dataclass
-from dataclasses_json import dataclass_json, LetterCase
-from enum import Enum
 from typing import Literal
-from .general import ItemBase, SRL
 
+from dataclasses_json import dataclass_json
 
-class Fit(Enum):
-    width = "width"
-    weight = "height"
-    contain = "contain"
-    cover = "cover"
-
-
-@dataclass_json
-@dataclass
-class BackgroundConfiguration:
-    blur: float
-    mask: str
-
-
-@dataclass_json(letter_case=LetterCase.CAMEL)
-@dataclass
-class BackgroundData:
-    aspect_ratio: float
-    fit: Fit
-    color: str
+from .general import SRL, ItemBase
 
 
 @dataclass_json
@@ -34,7 +13,7 @@ class BackgroundSRL(SRL):
         "BackgroundThumbnail",
         "BackgroundData",
         "BackgroundImage",
-        "BackgroundConfiguration"
+        "BackgroundConfiguration",
     ]
 
 
@@ -45,3 +24,4 @@ class BackgroundItem(ItemBase):
     data: BackgroundSRL
     image: BackgroundSRL
     configuration: BackgroundSRL
+    version: int = 2

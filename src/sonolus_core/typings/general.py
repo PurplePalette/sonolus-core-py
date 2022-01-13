@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from enum import Enum
 
+from dataclasses_json import dataclass_json
+
 
 @dataclass
 class ItemBase:
@@ -33,6 +35,7 @@ class ResourceType(Enum):
     engine_configuration = "EngineConfiguration"
 
 
+@dataclass_json
 @dataclass
 class SRL:
     type: ResourceType
