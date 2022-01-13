@@ -3,7 +3,6 @@ from .background import (
     BackgroundConfiguration,
     BackgroundData,
     BackgroundItem,
-    BackgroundResourceType,
     BackgroundSRL,
 )
 
@@ -14,6 +13,5 @@ __all__ = [
     "BackgroundConfiguration",
     "BackgroundData",
     "BackgroundItem",
-    "BackgroundResourceType",
     "BackgroundSRL",
 ]

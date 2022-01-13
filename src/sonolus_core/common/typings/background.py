@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json, LetterCase
 from enum import Enum
+from typing import Literal
 from .general import ItemBase, SRL
 
 
@@ -26,17 +27,15 @@ class BackgroundData:
     color: str
 
 
-class BackgroundResourceType(Enum):
-    background_thumbnail = "BackgroundThumbnail"
-    background_data = "BackgroundData"
-    background_image = "BackgroundImage"
-    background_configuration = "BackgroundConfiguration"
-
-
 @dataclass_json
 @dataclass
 class BackgroundSRL(SRL):
-    type: BackgroundResourceType
+    type: Literal[
+        "BackgroundThumbnail",
+        "BackgroundData",
+        "BackgroundImage",
+        "BackgroundConfiguration"
+    ]
 
 
 @dataclass_json
