@@ -25,11 +25,10 @@ class UseItem(Generic[T]):
 class LevelItem(ItemBase):
     rating: int
     engine: EngineItem
-    useSkin: UseItem(SkinItem)
-    useBackground: UseItem(BackgroundItem)
-    useEffect: UseItem(EffectItem)
-    useParticle: UseItem(ParticleItem)
-    cover: LevelSRL
-    bgm: LevelSRL
-    data: LevelSRL
-    version: int = 1
+    useSkin: UseItem[SkinItem]
+    useBackground: UseItem[BackgroundItem]
+    useEffect: UseItem[EffectItem]
+    useParticle: UseItem[ParticleItem]
+    cover: SRL[Literal["LevelCover"]]
+    bgm: SRL[Literal["LevelBgm"]]
+    data: SRL[Literal["LevelData"]]

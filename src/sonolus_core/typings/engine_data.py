@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Literal, Optional
+from typing import List, Literal, Optional, Union
 
 from dataclasses_json import dataclass_json
 
@@ -191,7 +191,7 @@ class EngineDataFunctionNode:
     args: List[float]
 
 
-EngineDataNode = EngineDataValueNode | EngineDataFunctionNode
+EngineDataNode = Union[EngineDataValueNode, EngineDataFunctionNode]
 
 
 @dataclass_json

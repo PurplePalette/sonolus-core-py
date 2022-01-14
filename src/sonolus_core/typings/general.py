@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from enum import Enum
+from typing import Generic, Literal, TypeVar
 
 from dataclasses_json import dataclass_json
 
@@ -13,31 +13,35 @@ class ItemBase:
     author: str
 
 
-class ResourceType(Enum):
-    level_cover = "LevelCover"
-    level_bgm = "LevelBgm"
-    level_data = "LevelData"
-    skin_thumbnail = "SkinThumbnail"
-    skin_data = "SkinData"
-    skin_texture = "SkinTexture"
-    background_thumbnail = "BackgroundThumbnail"
-    background_data = "BackgroundData"
-    background_image = "BackgroundImage"
-    background_configuration = "BackgroundConfiguration"
-    effect_thumbnail = "EffectThumbnail"
-    effect_data = "EffectData"
-    effect_clip = "EffectClip"
-    particle_thumbnail = "ParticleThumbnail"
-    particle_data = "ParticleData"
-    particle_texture = "ParticleTexture"
-    engine_thumbnail = "EngineThumbnail"
-    engine_data = "EngineData"
-    engine_configuration = "EngineConfiguration"
+ResourceTypeLiteral = Literal[
+    "LevelCover",
+    "LevelBgm",
+    "LevelData",
+    "SkinThumbnail",
+    "SkinData",
+    "SkinTexture",
+    "BackgroundThumbnail",
+    "BackgroundData",
+    "BackgroundImage",
+    "BackgroundConfiguration",
+    "EffectThumbnail",
+    "EffectData",
+    "EffectClip",
+    "ParticleThumbnail",
+    "ParticleData",
+    "ParticleTexture",
+    "EngineThumbnail",
+    "EngineData",
+    "EngineConfiguration",
+]
+
+
+ResourceType = TypeVar("ResourceType", bound=ResourceTypeLiteral)
 
 
 @dataclass_json
 @dataclass
-class SRL:
+class SRL(Generic[ResourceType]):
     type: ResourceType
     hash: str
     url: str

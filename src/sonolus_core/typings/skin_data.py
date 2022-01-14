@@ -1,10 +1,8 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import List, Literal, Optional
+from typing import Dict, List, Optional, Union
 
 from dataclasses_json import dataclass_json
-
-from .general import SRL
 
 
 class SkinSprite(Enum):
@@ -110,7 +108,7 @@ def customSkinSprite(engineId: int, spriteId: int) -> int:
 
 SkinDataExpression = Optional[Dict[Union[str, int], int]]
 
-SkinDataTransform = dict(str | int, SkinDataExpression)
+SkinDataTransform = Dict[Union[str, int], SkinDataExpression]
 
 
 @dataclass_json

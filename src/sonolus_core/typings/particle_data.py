@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import List, Literal, Optional
+from typing import Dict, List, Literal, Optional
 
 from dataclasses_json import dataclass_json
 
@@ -68,7 +68,7 @@ def customParticleEffect(engineId: int, effectId: int) -> int:
     return 100000 + engineId * 100 + effectId
 
 
-ParticleDataGroupParticlePropertyExpression = dict[str, int]
+ParticleDataGroupParticlePropertyExpression = Dict[str, int]
 
 easeTypes = Literal[
     "Linear",
@@ -145,7 +145,7 @@ class ParticleDataGroup:
 @dataclass
 class ParticleDataEffect:
     id: ParticleEffect
-    transform: dict
+    transform: Dict
     groups: List[ParticleDataGroup]
 
 

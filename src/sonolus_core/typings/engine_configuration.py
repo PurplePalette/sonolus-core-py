@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import List, Literal, Optional
+from typing import List, Literal, Optional, Union
 
 from dataclasses_json import dataclass_json
 
@@ -122,7 +122,7 @@ class EngineConfigurationUI:
     combo_animation: EngineConfigurationAnimation
     judgment_error_style: EngineConfigurationJudgmentErrorStyle
     judgment_error_placement: EngineConfigurationJudgmentErrorPlacement
-    judgment_error_min: float | int
+    judgment_error_min: Union[float, int]
 
 
 @dataclass_json
@@ -149,9 +149,9 @@ class EngineConfigurationSliderOption:
     display: Literal["number", "percentage"]
 
 
-EngineConfigurationOption = (
-    EngineConfigurationSliderOption | EngineConfigurationToggleOption
-)
+EngineConfigurationOption = Union[
+    EngineConfigurationSliderOption, EngineConfigurationToggleOption
+]
 
 
 @dataclass_json
