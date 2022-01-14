@@ -14,4 +14,4 @@ def localize(texts: LocalizationText, locale: str, fallback_locale: str) -> str:
     elif fallback_locale in texts:
         return texts[fallback_locale]
     else:
-        return texts[texts.keys()[0]]
+        return texts[list(texts.keys())[0]]
