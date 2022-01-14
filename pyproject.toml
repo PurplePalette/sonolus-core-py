@@ -31,6 +31,7 @@ requests = "^2.27.1"
 pytest = "^5.2"
 pysen = {version = "0.9.1", extras = ["lint"]}
 pytest-sugar = "^0.9.4"
+pysen-ls = "^0.1.2"
 
 [tool.pysen]
 version = "0.9"
@@ -39,7 +40,7 @@ version = "0.9"
 enable_black = true
 enable_flake8 = true
 enable_isort = true
-enable_mypy = false
+enable_mypy = true
 mypy_preset = "strict"
 line_length = 88
 py_version = "py38"
