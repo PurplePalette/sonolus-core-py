@@ -10,13 +10,6 @@ from .general import SRL, ItemBase
 from .particle import ParticleItem
 from .skin import SkinItem
 
-
-@dataclass_json
-@dataclass
-class LevelSRL(SRL):
-    type: Literal["LevelCover", "LevelBgm", "LevelData"]
-
-
 T = TypeVar("T")
 
 

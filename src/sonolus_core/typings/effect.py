@@ -8,13 +8,6 @@ from .general import SRL, ItemBase
 
 @dataclass_json
 @dataclass
-class EffectSRL(SRL):
-    type: Literal["EffectThumbnail", "EffectData"]
-
-
-@dataclass_json
-@dataclass
 class EffectItem(ItemBase):
-    thumbnail: EffectSRL
-    data: EffectSRL
-    version: int = 2
+    thumbnail: SRL[Literal["EffectThumbnail"]]
+    data: SRL[Literal["EffectData"]]

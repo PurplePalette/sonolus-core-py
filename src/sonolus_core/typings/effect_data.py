@@ -25,15 +25,9 @@ def customEffectClip(engineId: int, clipId: int) -> int:
 
 @dataclass_json
 @dataclass
-class EffectDataSRL(SRL):
-    type: Literal["EffectData"]
-
-
-@dataclass_json
-@dataclass
 class EffectDataClip:
     id: EffectClip
-    clip: EffectDataSRL
+    clip: SRL[Literal["EffectData"]]
 
 
 @dataclass_json

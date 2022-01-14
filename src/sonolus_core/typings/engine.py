@@ -12,18 +12,11 @@ from .skin import SkinItem
 
 @dataclass_json
 @dataclass
-class EngineSRL(SRL):
-    type: Literal["EngineThumbnail", "EngineData", "EngineConfiguration"]
-
-
-@dataclass_json
-@dataclass
 class EngineItem(ItemBase):
     skin: SkinItem
     background: BackgroundItem
     effect: EffectItem
     particle: ParticleItem
-    thumbnail: EngineSRL
-    data: EngineSRL
-    configuration: EngineSRL
-    version: int = 4
+    thumbnail: SRL[Literal["EngineThumbnail"]]
+    data: SRL[Literal["EngineData"]]
+    configuration: SRL[Literal["EngineConfiguration"]]

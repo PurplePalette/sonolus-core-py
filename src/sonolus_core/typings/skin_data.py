@@ -108,13 +108,7 @@ def customSkinSprite(engineId: int, spriteId: int) -> int:
     return 100000 + engineId * 100 + spriteId
 
 
-@dataclass_json
-@dataclass
-class SkinDataSRL(SRL):
-    type: Literal["SkinData"]
-
-
-SkinDataExpression = Optional[dict(str | int, int)]
+SkinDataExpression = Optional[Dict[Union[str, int], int]]
 
 SkinDataTransform = dict(str | int, SkinDataExpression)
 

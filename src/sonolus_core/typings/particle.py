@@ -8,14 +8,7 @@ from .general import SRL, ItemBase
 
 @dataclass_json
 @dataclass
-class ParticleSRL(SRL):
-    type: Literal["ParticleThumbnail", "ParticleData", "ParticleTexture"]
-
-
-@dataclass_json
-@dataclass
 class ParticleItem(ItemBase):
-    thumbnail: ParticleSRL
-    data: ParticleSRL
-    texture: ParticleSRL
-    version: int = 1
+    thumbnail: SRL[Literal["ParticleThumbnail"]]
+    data: SRL[Literal["ParticleData"]]
+    texture: SRL[Literal["ParticleTexture"]]
