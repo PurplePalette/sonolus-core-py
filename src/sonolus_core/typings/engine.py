@@ -13,7 +13,7 @@ from .skin import SkinItem
 @dataclass_json
 @dataclass
 class EngineSRL(SRL):
-    type: Literal["EngineThumbnail", "EngineData"]
+    type: Literal["EngineThumbnail", "EngineData", "EngineConfiguration"]
 
 
 @dataclass_json
@@ -25,4 +25,5 @@ class EngineItem(ItemBase):
     particle: ParticleItem
     thumbnail: EngineSRL
     data: EngineSRL
+    configuration: EngineSRL
     version: int = 4
