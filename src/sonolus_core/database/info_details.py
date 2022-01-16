@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import Generic, List, TypeVar
 
 from dataclasses_json import dataclass_json
+
 from .localization import LocalizationText
 
 T = TypeVar("T")
