@@ -1,10 +1,7 @@
-from src.sonolus_core import (
-    hash,
-    compress
-)
+from src.sonolus_core import compress, hash
 
 
-class TestResource():
+class TestResource:
     def test_hash_match(self) -> None:
         text = "sonolus"
         hashed_text = hash(bytes(text, "utf-8"))
