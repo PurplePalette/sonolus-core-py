@@ -9,5 +9,5 @@ class TestVersion(object):
         assert current_version.text == LATEST_VERSION
 
     def test_version(self) -> None:
-        version = src.sonolus_core.version
+        version = src.sonolus_core.current_version
         assert version.text == LATEST_VERSION
