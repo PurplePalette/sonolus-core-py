@@ -1,3 +1,4 @@
+from dataclasses import asdict
 import src.sonolus_core.typings as typings
 
 LATEST_VERSION = "0.5.9"
@@ -63,7 +64,7 @@ class TestBackgroundTypings(object):
                 url="/repository/BackgroundConfiguration/d",
             ),
         )
-        resp = bg.to_dict()
+        resp = asdict(bg)
         example = {
             "name": "darkblue",
             "version": 3,
