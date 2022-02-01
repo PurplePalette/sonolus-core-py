@@ -19,7 +19,7 @@ class Version:
 def get_latest_version() -> Version:
     try:
         page = requests.get("https://sonolus.com").text
-    except requests.exceptions.httperror as e:
+    except requests.exceptions.RequestException as e:
         raise e
     versionRegex = re.search(r"([0-9]\.){2}[0-9]", page)
     if versionRegex is None:
